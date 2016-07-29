@@ -1,0 +1,10 @@
+<div class="container no-gutter">
+    <h3 class="section-header">OUR GALLERY</h3>
+    <hr class="section-spacer"/>
+    <div class="content-container clearfix">
+        {% assign sorted-galleryItem = site.gallery | sort: 'id' | reverse %}
+        {% for galleryItem in sorted-galleryItem limit: 8 %}
+        <div class="col-md-3 col-sm-6 col-xs-6 no-gutter gallery-item" style="background-image: url('img/asset/gallery/{{ galleryItem.image }}')"></div>
+        {% endfor %}
+    </div>
+</div>
